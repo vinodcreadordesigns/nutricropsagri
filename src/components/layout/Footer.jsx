@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
-import Button from "../common/Button";
 import { companyInfo, footerPolicies } from "../../data/company";
 import { categories } from "../../data/categories";
 
@@ -28,7 +27,7 @@ const H = ({ children }) => (
 );
 
 const Row = ({ icon: I, children }) => (
-  <li className="flex gap-3 border-b border-dashed border-white/15 py-3 text-sm">
+  <li className="flex gap-3 border-b border-dashed border-white/15 py-3 text-sm first:pt-0">
     <I size={18} className="mt-0.5 shrink-0 text-accent" aria-hidden="true" />
     <span>{children}</span>
   </li>
@@ -48,18 +47,8 @@ export default function Footer() {
         <div className="absolute inset-0 bg-deep/75" />
       </div>
 
-      {/* Call to action */}
-      <div className="container-x flex flex-col items-start justify-between gap-5 border-b border-white/10 py-10 sm:flex-row sm:items-center">
-        <p className="font-heading text-2xl font-medium text-white sm:text-3xl">
-          Ready to Boost Your Crop Health and Yield?
-        </p>
-        <Button to="/contact" variant="primary">
-          Enquiry
-        </Button>
-      </div>
-
       {/* Main columns */}
-      <div className="container-x grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container-x grid gap-10 pb-12 pt-14 sm:grid-cols-2 md:pt-16 lg:grid-cols-4">
         {/* Logo image white background ke saath */}
         <div>
           <Link
