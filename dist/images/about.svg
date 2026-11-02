@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ccbe8"/><stop offset="1" stop-color="#f3ecc0"/></linearGradient></defs>
+<rect width="900" height="700" fill="url(#s)"/><circle cx="702" cy="224" r="49.00000000000001" fill="#fff4c2" opacity=".9"/>
+<path d="M0 434 Q 225 315 450 420 T 900 385.00000000000006 V700 H0Z" fill="#2f8f4e"/>
+<path d="M0 546 Q 270 448 540 532 T 900 489.99999999999994 V700 H0Z" fill="#0e5a30"/>
+<text x="450" y="651" text-anchor="middle" font-family="Arial" font-size="35" fill="#fff" opacity=".8">Replace with company image</text></svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0c0"/><stop offset="1" stop-color="#eaf3d0"/></linearGradient></defs>
+<rect width="800" height="600" fill="url(#s)"/><circle cx="624" cy="192" r="42.00000000000001" fill="#fff4c2" opacity=".9"/>
+<path d="M0 372 Q 200 270 400 360 T 800 330 V600 H0Z" fill="#2f8f4e"/>
+<path d="M0 468 Q 240 384 480 456 T 800 420 V600 H0Z" fill="#0e5a30"/>
+<text x="400" y="558" text-anchor="middle" font-family="Arial" font-size="30" fill="#fff" opacity=".8">Research work</text></svg>

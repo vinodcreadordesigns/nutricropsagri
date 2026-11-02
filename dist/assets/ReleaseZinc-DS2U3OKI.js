@@ -1,0 +1,1 @@
+import{j as r}from"./motion-6MWyV0xo.js";import t from"./ProductTemplate-D6Dk_XdD.js";import"./react-Uj5dScMu.js";import"./PageHero-BS2YA71G.js";import"./index-BgCNEgYf.js";import"./ProductCard-BUZDJEYq.js";import"./DynamicForm-tvtdsD_D.js";import"./NotFound-D8qZmJj1.js";function u(){return r.jsx(t,{slug:"release-zinc"})}export{u as default};
