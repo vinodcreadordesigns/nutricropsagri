@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b5a2c"/><stop offset="1" stop-color="#063b23"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#s)"/><circle cx="936" cy="201.6" r="44.1" fill="#fff4c2" opacity=".9"/>
+<path d="M0 390.6 Q 300 283.5 600 378 T 1200 346.5 V630 H0Z" fill="#2f8f4e"/>
+<path d="M0 491.40000000000003 Q 360 403.2 720 478.8 T 1200 441 V630 H0Z" fill="#0e5a30"/>
+<text x="600" y="585.9" text-anchor="middle" font-family="Arial" font-size="31.5" fill="#fff" opacity=".8">NutriCrops Agriculture</text></svg>

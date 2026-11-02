@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ccbe8"/><stop offset="1" stop-color="#eaf3d0"/></linearGradient></defs>
+<rect width="1000" height="600" fill="url(#s)"/><circle cx="780" cy="192" r="42.00000000000001" fill="#fff4c2" opacity=".9"/>
+<path d="M0 372 Q 250 270 500 360 T 1000 330 V600 H0Z" fill="#2f8f4e"/>
+<path d="M0 468 Q 300 384 600 456 T 1000 420 V600 H0Z" fill="#0e5a30"/>
+<text x="500" y="558" text-anchor="middle" font-family="Arial" font-size="30" fill="#fff" opacity=".8">Plant Nutrition</text></svg>

@@ -1,0 +1,30 @@
+// Educational placeholder articles - review and edit before publishing.
+const b = (slug, title, category, date, excerpt, content) => ({ slug, title, category, date, excerpt, content, readTime: "3 min read", image: `/images/blog/${slug}.svg` });
+export const blogs = [
+  b("importance-of-micronutrients", "Importance of Micronutrients in Crop Growth", "Plant Nutrition", "2026-01-10",
+    "Why small amounts of zinc, iron, manganese and copper make a big difference to crop health.",
+    ["Micronutrients such as zinc, iron, manganese, copper, boron and molybdenum are needed by plants in small quantities, yet they play a vital role in enzyme activity, photosynthesis and overall plant metabolism.",
+     "When one of these nutrients is deficient, crops may show symptoms such as yellowing, stunted growth or poor flowering and fruit set, which can affect both yield and quality.",
+     "A balanced nutrition programme, guided by soil and leaf analysis, helps ensure that crops receive the micronutrients they need at the right stage."]),
+  b("balanced-plant-nutrition", "How Balanced Plant Nutrition Improves Crop Quality", "Crop Quality", "2026-01-24",
+    "Balanced nutrition goes beyond NPK - here is why it matters for quality and consistency.",
+    ["Crops need macronutrients, secondary nutrients and micronutrients working together. Over-reliance on a single nutrient can limit the benefit of the others.",
+     "Balanced nutrition supports uniform growth, better colour, size and shelf life, and helps crops use applied fertilizers more efficiently.",
+     "Working with soil test results and crop stage requirements is the most reliable way to plan a nutrition programme."]),
+  b("bio-fertilizers", "Understanding Bio Fertilizers", "Bio Inputs", "2026-02-07",
+    "A simple introduction to bio fertilizers and how they support soil health.",
+    ["Bio fertilizers contain beneficial living microorganisms that help make nutrients more available to plants, such as by supporting nitrogen availability or phosphorus solubilisation.",
+     "They are used as part of an integrated nutrient management approach and can help reduce dependence on chemical inputs over time.",
+     "Storage, handling and application method are important for keeping the microorganisms viable, so always follow the product label."]),
+  b("chelated-micronutrients", "Role of Chelated Micronutrients in Agriculture", "Micronutrients", "2026-02-21",
+    "How chelation improves the stability and availability of micronutrients.",
+    ["Chelated micronutrients are bound to an organic molecule, which helps keep the nutrient available to the plant across a wider range of soil and water conditions.",
+     "This can improve the efficiency of foliar and soil applications compared with some non-chelated sources.",
+     "Choosing the right chelate and application method depends on the crop, soil condition and the nutrient being supplied."]),
+  b("modern-agricultural-practices", "Modern Agricultural Practices for Better Crop Productivity", "Farming Practices", "2026-03-05",
+    "From soil testing to fertigation - practices that help farmers grow more with less waste.",
+    ["Modern practices such as soil and leaf testing, precision nutrient scheduling, fertigation and integrated pest management help farmers make better use of inputs.",
+     "Combining good agronomy with the right crop nutrition products supports productivity while protecting soil health.",
+     "Farmers are encouraged to consult local agricultural experts and follow label recommendations for all inputs."]),
+];
+export const getBlog = (slug) => blogs.find((x) => x.slug === slug);
