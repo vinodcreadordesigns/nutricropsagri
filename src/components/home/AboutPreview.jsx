@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, animate, useInView, useReducedMotion } from "framer-motion";
 import Img from "../common/Img";
 import { fadeUp, viewOnce } from "../../utils/animations";
 
@@ -8,15 +9,50 @@ const HEADING =
   "Since 2000, we have grown to become India's leading manufacturer of various types of high quality plant nutrition products.";
 const PARAGRAPH =
   "At NutriCrops Agri Search, we lead the way in agricultural innovation, producing top-tier organic fertilizers without compromise. Our name is synonymous with trust and excellence, making us the go-to choice for farmers seeking unparalleled solutions in cultivation. In the realm of organic fertilizers, NutriCrops Agri Search defines excellence.";
+// value ab number hai, suffix alag hai (jaise "+")
 const STATS = [
-  { value: "100 +", label: "Product Range" },
-  { value: "36", label: "Popular Brands" },
-  { value: "35+", label: "Awards Achiever" },
+  { value: 100, suffix: "+", label: "Product Range" },
+  { value: 36, suffix: "", label: "Popular Brands" },
+  { value: 35, suffix: "+", label: "Awards Achiever" },
 ];
 const START_YEAR = 2000;
 const END_YEAR = new Date().getFullYear(); // har saal apne aap update hoga
 const ABOUT_IMAGE = "/images/about.svg"; // building ki photo yahan lagao (jaise /images/about.webp)
+const COUNT_DURATION = 2; // seconds: counting kitni der chalegi
 // -------------------------------------------
+
+/* Counting component: view me aate hi 0 se `to` tak ginti karta hai */
+function CountUp({ to, suffix = "", duration = COUNT_DURATION, className = "" }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!inView || !node) return;
+
+    // Jin users ne "reduce motion" on kiya hai unko seedha final number dikhao
+    if (reduceMotion) {
+      node.textContent = `${to}${suffix}`;
+      return;
+    }
+
+    const controls = animate(0, to, {
+      duration,
+      ease: "easeOut",
+      onUpdate: (v) => {
+        node.textContent = `${Math.round(v)}${suffix}`;
+      },
+    });
+    return () => controls.stop();
+  }, [inView, to, suffix, duration, reduceMotion]);
+
+  return (
+    <span ref={ref} className={`tabular-nums ${className}`}>
+      0{suffix}
+    </span>
+  );
+}
 
 export default function AboutPreview() {
   const years = END_YEAR - START_YEAR;
@@ -67,12 +103,15 @@ export default function AboutPreview() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            {/* Stats */}
+            {/* Stats (counting) */}
             <ul className="grid grid-cols-3 gap-3 sm:gap-6">
               {STATS.map((s) => (
                 <li key={s.label}>
-                  <p className="text-3xl font-extrabold leading-none text-charcoal sm:text-4xl xl:text-5xl">
-                    {s.value}
+                  <p
+                    className="text-3xl font-extrabold leading-none text-charcoal sm:text-4xl xl:text-5xl"
+                    aria-label={`${s.value}${s.suffix} ${s.label}`}
+                  >
+                    <CountUp to={s.value} suffix={s.suffix} />
                   </p>
                   <p className="mt-2 text-xs leading-snug text-charcoal sm:text-sm lg:text-base">
                     {s.label}
@@ -99,8 +138,12 @@ export default function AboutPreview() {
                   <span className="h-px w-6 bg-charcoal sm:w-10" aria-hidden="true" />
                 </p>
 
-                <p className="mt-2 text-7xl font-extrabold leading-none text-charcoal sm:text-8xl">
-                  {years}
+                {/* Years (counting) */}
+                <p
+                  className="mt-2 text-7xl font-extrabold leading-none text-charcoal sm:text-8xl"
+                  aria-label={`${years} years`}
+                >
+                  <CountUp to={years} duration={2.4} />
                 </p>
 
                 <p className="mt-3 flex w-full items-center justify-center gap-2 text-base font-semibold text-charcoal sm:text-lg">

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Eye, Target, Gem, ShieldCheck, Lightbulb, Leaf } from "lucide-react";
 import PageHero from "../../components/common/PageHero";
-import Img from "../../components/common/Img";
 import SectionTitle from "../../components/common/SectionTitle";
 import CtaBand from "../../components/common/CtaBand";
 import { Seo } from "../../utils/seo";
@@ -18,14 +17,13 @@ export default function CompanyProfile() {
   return (
     <>
       <Seo title="Company Profile | NutriCrops Agriculture" description="Learn about NutriCrops Agriculture - our vision, mission, values and commitment to quality plant nutrition." path="/about" />
-      <PageHero title="Company Profile" crumbs={[{ name: "Home", to: "/" }, { name: "Company Profile", to: "/about" }]} />
-      <section className="py-14 md:py-20"><div className="container-x grid items-center gap-10 lg:grid-cols-2">
-        <div className="space-y-4 leading-relaxed text-charcoal/85">
+      <PageHero crumbs={[{ name: "Home", to: "/" }, { name: "Company Profile", to: "/about" }]} />
+      <section className="py-14 md:py-20"><div className="container-x">
+        <div className="max-w-4xl space-y-4 leading-relaxed text-charcoal/85">
           <h2 className="text-3xl font-semibold">NutriCrops Agriculture</h2><span className="block h-[3px] w-16 bg-accent" />
           <p>Placeholder introduction. Replace this with the company's introduction: when and where it was established, what it manufactures, the regions it serves and its approach to plant nutrition.</p>
           <p>Add certifications, awards or export information here only once verified.</p>
         </div>
-        <Img src="/images/about.svg" alt="NutriCrops agriculture and crop field" width={900} height={700} className="h-auto w-full" />
       </div></section>
       <section className="bg-mist py-14 md:py-20"><div className="container-x">
         <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={viewOnce} className="grid gap-5 md:grid-cols-3">

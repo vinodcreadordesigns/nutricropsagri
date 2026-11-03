@@ -6,6 +6,9 @@ import { categories } from "../../data/categories";
 // Footer background image badalna ho to yahan path change karo (public/images/ me rakho)
 const FOOTER_BG = "/images/hero-footer-1.WebP";
 
+// Logo ka path (transparent background wala logo use karo)
+const FOOTER_LOGO = "/images/logo.WebP";
+
 // Agar Creador Designs ki website ka link lagana ho to yahan daalo (khali chhodo to sirf text dikhega)
 const DEVELOPER_URL = "";
 
@@ -49,19 +52,19 @@ export default function Footer() {
 
       {/* Main columns */}
       <div className="container-x grid gap-10 pb-12 pt-14 sm:grid-cols-2 md:pt-16 lg:grid-cols-4">
-        {/* Logo image white background ke saath */}
+        {/* Logo: original colors, bina background ke */}
         <div>
           <Link
             to="/"
             aria-label="NutriCrops Agri - Home"
-            className="inline-block rounded-md bg-white p-3 sm:p-4"
+            className="inline-block transition hover:opacity-90"
           >
             <img
-              src="/images/logo.WebP"
+              src={FOOTER_LOGO}
               alt="NutriCrops Agri"
               width={160}
               height={160}
-              className="h-24 w-auto object-contain sm:h-28"
+              className="h-24 w-auto bg-transparent object-contain sm:h-28"
             />
           </Link>
         </div>
