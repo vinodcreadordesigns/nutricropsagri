@@ -41,20 +41,20 @@ export default function Navbar({ onSearch, menuOpen, onToggle }) {
     >
       <nav
         aria-label="Main navigation"
-        className="container-x relative flex items-start justify-between"
+        className="container-x relative flex h-14 items-center justify-between sm:h-16 lg:h-auto lg:items-start"
       >
-        {/* Ek hi logo: laptop aur desktop par same size, left gap ke saath */}
+        {/* Mobile: normal flow, left aligned | lg+: absolute hanging card */}
         <Link
           to="/"
           aria-label="Agri Search - Home"
-          className="absolute left-4 top-0 z-10 w-[130px] drop-shadow-xl sm:left-6 sm:w-[145px] lg:left-8 lg:w-[170px] xl:left-10"
+          className="z-10 shrink-0 drop-shadow-xl lg:absolute lg:left-8 lg:top-0 lg:w-[170px] xl:left-10"
         >
           <Logo compact={scrolled} />
         </Link>
 
-        {/* Logo ke liye jagah (logo width ke barabar) */}
+        {/* Spacer only needed on lg+ because logo is absolute there */}
         <div
-          className="h-14 w-[130px] shrink-0 sm:h-16 sm:w-[145px] lg:h-[82px] lg:w-[170px]"
+          className="hidden h-[82px] w-[170px] shrink-0 lg:block"
           aria-hidden="true"
         />
 
@@ -128,12 +128,12 @@ export default function Navbar({ onSearch, menuOpen, onToggle }) {
             </ul>
 
             {/* Mobile / tablet buttons */}
-            <div className="flex items-center gap-1 lg:hidden">
+            <div className="flex items-center lg:hidden">
               <button
                 type="button"
                 onClick={onSearch}
                 aria-label="Open search"
-                className="p-2.5 text-white"
+                className="p-2 text-white"
               >
                 <Search size={20} />
               </button>
@@ -143,7 +143,7 @@ export default function Navbar({ onSearch, menuOpen, onToggle }) {
                 aria-expanded={menuOpen}
                 aria-controls="mobile-menu"
                 aria-label={menuOpen ? "Close menu" : "Open menu"}
-                className="p-2.5 text-white"
+                className="p-2 text-white"
               >
                 {menuOpen ? <X size={26} /> : <Menu size={26} />}
               </button>

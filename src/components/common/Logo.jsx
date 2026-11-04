@@ -1,16 +1,26 @@
-// compact=false -> hero par bada card (bada icon + text), slanted bottom (laptop + desktop)
-// compact=true  -> scroll ke baad (sirf text wala part)
-// Mobile/tablet par hamesha compact text-only card dikhta hai taaki header bar me fit ho.
+// Mobile/tablet (< lg): horizontal -> [icon] [name + pvt ltd]
+// Laptop/desktop (lg+): vertical hanging card, big icon collapses on scroll
 export default function Logo({ compact = false, className = "" }) {
   return (
     <div
-      className={`rounded-b-md bg-white text-center transition-all duration-500 ${
-        compact
-          ? "pb-1.5 lg:pb-2"
-          : "pb-1.5 lg:pb-8 lg:[clip-path:polygon(0_0,100%_0,100%_90%,0_100%)]"
-      } ${className}`}
+      className={`bg-white transition-all duration-500
+        max-lg:flex max-lg:items-center max-lg:gap-2 max-lg:rounded-md max-lg:px-2 max-lg:py-1
+        lg:rounded-b-md lg:text-center ${
+          compact
+            ? "lg:pb-2"
+            : "lg:pb-8 lg:[clip-path:polygon(0_0,100%_0,100%_90%,0_100%)]"
+        } ${className}`}
     >
-      {/* Bada icon: laptop + desktop par, sirf hero state me */}
+      {/* Mobile icon (horizontal layout) */}
+      <img
+        src="/images/logo.WebP"
+        alt="Agri Search"
+        width={36}
+        height={36}
+        className="h-8 w-8 shrink-0 object-contain sm:h-10 sm:w-10 lg:hidden"
+      />
+
+      {/* Desktop big icon (hero state only) */}
       <div
         className={`overflow-hidden transition-all duration-500 max-lg:hidden ${
           compact ? "max-h-0 opacity-0" : "max-h-[120px] pt-2 opacity-100"
@@ -25,16 +35,16 @@ export default function Logo({ compact = false, className = "" }) {
         />
       </div>
 
-      {/* Text part: hamesha dikhta hai */}
-      <div className="px-1.5 pt-1.5 sm:px-2">
-        <p className="text-[13px] font-extrabold uppercase leading-none tracking-wide text-primary sm:text-[15px] lg:text-[18px]">
+      {/* Text part */}
+      <div className="min-w-0 text-left lg:px-2 lg:pt-1.5 lg:text-center">
+        <p className="whitespace-nowrap text-[12px] font-extrabold uppercase leading-none tracking-wide text-primary sm:text-[15px] lg:text-[18px]">
           NutriCrops Agri<sup className="align-super text-[6px]">®</sup>
         </p>
-        <p className="mt-0.5 text-[9px] font-semibold leading-none text-charcoal sm:text-[10px] lg:text-[12px]">
+        <p className="mt-0.5 whitespace-nowrap text-[8px] font-semibold leading-none text-charcoal sm:text-[10px] lg:text-[12px]">
           (INDIA) PVT. LTD.
         </p>
-        <div className="mx-auto mt-1 h-px bg-primary/60" />
-        <p className="mt-1 text-[6px] font-bold uppercase leading-tight text-charcoal sm:text-[7px] lg:text-[6px]">
+        <div className="mt-1 hidden h-px bg-primary/60 lg:mx-auto lg:block" />
+        <p className="mt-1 hidden text-[6px] font-bold uppercase leading-tight text-charcoal sm:block sm:text-[7px] lg:text-[6px]">
           An ISO 9001:2015 &amp; 14001:2015 Certified Company
         </p>
       </div>
